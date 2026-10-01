@@ -1,0 +1,4 @@
+services:
+  worker:
+    image: alpine
+    command: sleep 3600

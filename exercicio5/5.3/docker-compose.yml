@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    networks:
+      - rede_backend
+  
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - pg_dados:/var/lib/postgresql/data
+    networks:
+      - rede_backend
+
+volumes:
+  pg_dados:
+
+networks:
+  rede_backend: 
